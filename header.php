@@ -34,12 +34,11 @@
 				<span></span>
 				<span></span>
 				<span></span>
-				<span></span>
 			</div>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'primary',
-				'menu_id'        => 'primary-menu',
+				'primary'        => 'primary',
 			) );
 			?>
 		</nav><!-- #site-navigation -->
