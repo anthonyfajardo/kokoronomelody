@@ -88,7 +88,8 @@ header.site-header{
 }
 
 .menu-primary-container{
-	background: rgba(238,215,209,0.9);
+	// background: rgba(238,215,209,0.9);
+	background: rgba(255,255,255,0.9);
 	position: absolute;
 	width: 100%;
 	height: 100vh;
@@ -100,8 +101,20 @@ header.site-header{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	// clip-path: circle(0px at top right);
-	// transition: clip-path 1s ease-in-out;
+	clip-path: circle(0px at top right);
+	transition: clip-path 1s ease-in-out;
+
+	ul#menu-primary{
+		li.menu-item-has-children{
+			ul{
+				margin: 0;
+
+				li{
+					a{ font-size: 14px; }
+				}
+			}
+		}		
+	}
 
 
 	// mobile view on landscape enable scrolling
@@ -119,7 +132,7 @@ header.site-header{
 	@media screen and (min-width: 768px){
 		background: none;
 		position: initial;
-		height: 25px;
+		height: auto;
 		ul#menu-primary{
 			flex-direction: row;
 			li{ 
@@ -127,7 +140,6 @@ header.site-header{
 				a{ font-size: 16px; }
 			}
 			li.menu-item-has-children{
-				position: relative;
 				
 				ul{
 					max-height: 0;
@@ -135,12 +147,16 @@ header.site-header{
 					padding: 0;
 					overflow: hidden;
 					position: absolute;
-					background: rgba(179,179,179,0.9);
+					// background: rgba(179,179,179,0.9);
+					background: rgba(255,255,255,0.9);
 					top: 100%;
-					left: 0;
 					transition: 0.5s ease-in-out;
+			
 					// a{ color: white; }
-					li{ margin: 15px; }
+					li{
+						margin: 15px 0; 
+						padding: 0 15px;
+					}
 				}
 
 				&:hover{
@@ -207,22 +223,13 @@ ul#menu-primary{
 
 li.menu-item-has-children{
 	
-	&:before{
-		content: ">";
-		position: absolute;
-		right: -15px;
-		top: 0;
-		transition: 0.5s ease-in-out;
+	a:after{ 
+		content: "  >";
+		border-bottom: none!important; 
 	}
 
-	&:hover{
-		&:before{ transform: rotate(90deg); }
-	}	
-
-	a:after{ border-bottom: none!important; }
-
 	ul{
-		
+		padding-left: 15px;
 
 		li{
 			display: flex;
@@ -231,11 +238,13 @@ li.menu-item-has-children{
 			margin-right: 0!important;
 
 
+
 			a{ 
 				width: 100%;
 				font-size: 14px; 
 				padding: 10px 15px;
 				&:after{
+
 					border-bottom: 2px solid $color__text-main!important;
 				}
 			}
@@ -249,7 +258,8 @@ li.menu-item-has-children{
 	/* pink background */
 	// background: rgba(238,215,209,0.86); 
 
-	background: rgba(204,204,204,0.9);
+	// background: rgba(204,204,204,0.9);
+	background: rgba(255,255,255,0.9);
 
 }
 

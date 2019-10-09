@@ -150,8 +150,19 @@ function kokoronomelody_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );	
+	register_sidebar( array(
+		'name'          => esc_html__( 'footer-wide', 'kokoronomelody' ),
+		'id'            => 'footer-wide',
+		'description'   => esc_html__( 'Add widgets here.', 'kokoronomelody' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );	
 }
 add_action( 'widgets_init', 'kokoronomelody_widgets_init' );
+
+
 
 /**
  * Enqueue scripts and styles.
@@ -232,3 +243,9 @@ function featured_image_url($currentPost){
 	$image_url= wp_get_attachment_url($image_id);
 	return $image_url;
 }
+	
+function upcoming_workshops($attr){
+	ob_start();
+	get_template_part('template-parts/upcoming-workshops');
+	return ob_get_clean();
+}add_shortcode('upcoming-workshops', 'upcoming_workshops');
