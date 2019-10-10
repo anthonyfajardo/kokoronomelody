@@ -16,5 +16,20 @@
 		$nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
 	});
 
+
+	$(document).ready(function(){
+		var zero = 0;
+		
+		$(window).scroll(function(){
+			$('#masthead').toggleClass('hide', $(window).scrollTop() > zero);
+
+
+			zero = $(window).scrollTop();
+
+
+		})
+	});
+
+
 } )( jQuery );
 

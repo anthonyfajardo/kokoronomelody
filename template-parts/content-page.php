@@ -10,12 +10,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
 
-	<?php kokoronomelody_post_thumbnail(); ?>
+	<?php if(has_post_thumbnail()): ?>
+	<header class="entry-header has-banner" style="background: url(<?php echo featured_image_url($post);?>); background-position: center; background-size: cover; background-repeat: no-repeat;">
 
+			<?php 
+				$bannerTag = get_field('banner_tagline');
+				if($bannerTag){
+					echo '<div class="banner-tag">';
+					echo '<h1 class="entry-title">'.$bannerTag.'</h1>';
+					echo '</div>';
+				}
+			?>		
+
+	</header>
+	<?php endif; ?>
 	<div class="entry-content">
 		<?php
 		the_content();

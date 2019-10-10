@@ -1,3 +1,4 @@
+
 header.site-header{
 	width: 100vw;
 	transition: 0.5s ease-in-out;
@@ -7,6 +8,7 @@ header.site-header{
 	align-items: center;
 	position: fixed;
 	width: 100%;
+	z-index: 100;
 
 	&:before, &:after{
 		content: none;
@@ -110,7 +112,8 @@ header.site-header{
 				margin: 0;
 
 				li{
-					a{ font-size: 14px; }
+					a{ 
+						font-size: 14px; }
 				}
 			}
 		}		
@@ -125,11 +128,13 @@ header.site-header{
 			width: 100%;
 			padding: 50px 150px;
 			overflow: scroll;
+
+
 		}
 
 	}
 
-	@media screen and (min-width: 768px){
+	@media screen and (min-width: 768px){	
 		background: none;
 		position: initial;
 		height: auto;
@@ -152,7 +157,7 @@ header.site-header{
 					top: 100%;
 					transition: 0.5s ease-in-out;
 			
-					// a{ color: white; }
+					
 					li{
 						margin: 15px 0; 
 						padding: 0 15px;
@@ -182,6 +187,12 @@ header.site-header{
 
 .menu-primary-container.show{
 	clip-path: circle(150% at top right);
+	position: absolute!important;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: 0.5s ease-in-out;
 }
 
 ul#menu-primary{
@@ -216,16 +227,25 @@ ul#menu-primary{
 
 		@media screen and (min-width: 768px){
 			margin-right: 5px;
-			a{ 	font-size: 16px; }
+			a{ 	
+				font-size: 16px; 
+				color: white;
+			}
 		}		
 	}
 }
 
 li.menu-item-has-children{
 	
-	a:after{ 
+	a{ position: relative; }
+	a:before{ 
 		content: "  >";
 		border-bottom: none!important; 
+		color: white;
+		position: absolute;
+		right: -15px;
+		
+
 	}
 
 	ul{
@@ -243,10 +263,9 @@ li.menu-item-has-children{
 				width: 100%;
 				font-size: 14px; 
 				padding: 10px 15px;
-				&:after{
-
-					border-bottom: 2px solid $color__text-main!important;
-				}
+				color: $color__text-main!important;
+				&:after{ border-bottom: 2px solid $color__text-main!important;}
+				&:before{ content: none; }
 			}
 		}
 	}
@@ -261,5 +280,21 @@ li.menu-item-has-children{
 	// background: rgba(204,204,204,0.9);
 	background: rgba(255,255,255,0.9);
 
+	// .menu-item{
+	// 	a{ 
+	// 		color: $color__text-main!important; 
+	// 		&:before{
+	// 			color: $color__text-main!important;
+	// 		}
+	// 	}
+	// }
+
 }
 
+#masthead.hide{
+	transform: translateY(-100%);
+
+	.menu-primary-container.show{
+		transform: translateY(95px);
+	}
+}
