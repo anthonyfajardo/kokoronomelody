@@ -1,75 +1,65 @@
-
 header.site-header{
-	width: 100vw;
-	transition: 0.5s ease-in-out;
-	padding: 10px 15px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 	position: fixed;
 	width: 100%;
-	z-index: 100;
-
-	&:before, &:after{
-		content: none;
-	}
-
-	@media screen and (min-width: 768px){
-		
-		padding-left: 3vw;
-		padding-right: 3vw;		
-		.hamburger{ display: none; }
-		.menu-primary-container{ clip-path: none; }
-	}
+	padding: 15px;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	display: flex;
+	justify-content: space-between;
+	background: none;
+	&:before,
+	&:after{ content: none; }
 }
 
-/* Site Branding / Logo */
-
+/* 
+* SITE BRANDING - LOGO
+*/
 .site-branding{
-	width: 75px;
-	height: 75px;
-	a{
-		img{ 
-			width: 100%; 
-			height: auto;
-		}
-	}
-
-	@media screen and (min-width: 1024px){
-	}
+	width: 50px;
+	height: 50px;
 }
 
-
-/*  Mobile Navigation Styling (Hamburger Menu) */
+/*
+* HAMBURGER MENU - Mobile navigation
+*/ 
 
 .hamburger{
-	width: 40px;
+	width: 35px;
 	height: 35px;
-	position: relative;
-	rotate:(0deg);
+	position: fixed;
+	right: 30px;
+	top: 30px;
+	transform: rotate(0deg);
 	transition: 0.5s ease-in-out;
-	cursor: pointer;	
+	cursor: pointer;
 	z-index: 10;
-	
 
 	span{
 		display: block;
 		position: absolute;
-		height: 6px;
+		height: 3px;
 		width: 100%;
-		background: #000000;
-		border-radius: 9px;
+		background: black;
+		border-radius: 10px;
 		opacity: 1;
 		left: 0;
 		transform: rotate(0deg);
-		transition: 0.25s ease-in-out;
+		transition: 0.3s ease-in-out;
 
-		&:nth-child(1){ top: 0px; }
-		&:nth-child(2){ top: 10px;}
+
+
+
+		&:nth-child(1){ top: 0; }
+		&:nth-child(2){ top: 10px; }
 		&:nth-child(3){ top: 20px; }
+
 	}
 }
 
+/*
+*	When the Hamburger menu is clicked
+*/
 .hamburger.open{
 	span{
 		&:nth-child(1){
@@ -79,9 +69,8 @@ header.site-header{
 
 		&:nth-child(2){
 			opacity: 0;
-			left: -60px;
+			left: 60px;
 		}
-
 		&:nth-child(3){
 			top: 10px;
 			transform: rotate(-135deg);
@@ -89,229 +78,55 @@ header.site-header{
 	}
 }
 
+
+/*
+*	Hamburger Menu & Page Links
+*/
+nav#site-navigation{
+}
+
 .menu-primary-container{
-	// background: rgba(238,215,209,0.9);
-	background: rgba(255,255,255,0.9);
-	position: absolute;
-	width: 100%;
+	background: white;
+	position: fixed;
+	top: 0;
+	left: 0;
 	height: 100vh;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+	width: 100%;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	clip-path: circle(0px at top right);
-	transition: clip-path 1s ease-in-out;
-
-	ul#menu-primary{
-		li.menu-item-has-children{
-			ul{
-				margin: 0;
-
-				li{
-					a{ 
-						font-size: 14px; }
-				}
-			}
-		}		
-	}
-
-
-	// mobile view on landscape enable scrolling
-	@media screen and (max-width: 768px) and (orientation: landscape){
-
-		ul#menu-primary{
-			justify-content: flex-start;
-			width: 100%;
-			padding: 50px 150px;
-			overflow: scroll;
-
-
-		}
-
-	}
-
-	@media screen and (min-width: 768px){	
-		background: none;
-		position: initial;
-		height: auto;
-		ul#menu-primary{
-			flex-direction: row;
-			li{ 
-				margin-right: 25px; 
-				a{ font-size: 16px; }
-			}
-			li.menu-item-has-children{
-				
-				ul{
-					max-height: 0;
-					margin: 0;
-					padding: 0;
-					overflow: hidden;
-					position: absolute;
-					// background: rgba(179,179,179,0.9);
-					background: rgba(255,255,255,0.9);
-					top: 100%;
-					transition: 0.5s ease-in-out;
-			
-					
-					li{
-						margin: 15px 0; 
-						padding: 0 15px;
-					}
-				}
-
-				&:hover{
-					ul{
-						max-height: 250px!important;
-						overflow: none!important;
-						margin: 0;
-						
-					}
-				}
-			}			
-		}	
-	}
-	@media screen and (min-width: 1024px){
-		ul#menu-primary{
-			li{ margin-right: 35px; }
-
-
-		}
-	}
-}
-
-
-.menu-primary-container.show{
-	clip-path: circle(150% at top right);
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	transform: translateX(-100%);
 	transition: 0.5s ease-in-out;
-}
+	overflow-y: scroll;
+	overflow-x: hidden;	
 
-ul#menu-primary{
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 100%;
-	li{ 
-		list-style: none; 
+	@media screen and (orientation: landscape){
+		height: 100vh;
+		align-items: flex-start;
+	}
 
-		a{
-			font-size: 21px;
-			font-weight: 400;
-			letter-spacing: 1.5px;
-			text-decoration: none;
-			color: $color__text-main;
-			&:after{
-				display: block;
-				content: "";
-				border-bottom: 2px solid white;
-				transform: scale(0);
-				transition: transform 0.5s ease-in-out;
+	ul{
+		padding-left: 0;
 
-			}
+		li{
+			list-style: none;
+			margin: 20px 0;
 			
-			&:hover{
-				&:after{ transform: scaleX(1); }
-			}
+			a{ font-size: 21px; }
 		}
-
-		@media screen and (min-width: 768px){
-			margin-right: 5px;
-			a{ 	
-				font-size: 16px; 
-				color: white;
-			}
-		}		
 	}
 }
 
 li.menu-item-has-children{
-	
-	a{ 
-		position: relative; 
-
-		&:hover{
-			&:before{
-				transform: rotate(90deg);
-			}
-		}
-	}
-	a:before{ 
-		content: "  >";
-		border-bottom: none!important; 
-		color: white;
-		position: absolute;
-		right: -15px;
-		transition: 0.5s ease-in-out;
-	}
-
-
 	ul{
-		padding-left: 15px;
-
+		margin-top: 10px;
+		margin-bottom: 20px;
 		li{
-			display: flex;
-			justify-content: flex-start;
-			align-items: center;
-			margin-right: 0!important;
-
-
-
-			a{ 
-				width: 100%;
-				font-size: 14px; 
-				padding: 10px 15px;
-				color: $color__text-main!important;
-				&:after{ border-bottom: 2px solid $color__text-main!important;}
-				&:before{ content: none; }
-			}
+			margin-top: 0;
+			margin-bottom: 10px;
+			a{ font-size: 14px; }
 		}
 	}
-
-
-}	
-
-.scrolled{
-	/* pink background */
-	// background: rgba(238,215,209,0.86); 
-
-	// background: rgba(204,204,204,0.9);
-	background: rgba(255,255,255,0.9);
-
-	.menu-item{
-		a{ 
-			color: $color__text-main!important; 
-			&:before{
-				color: $color__text-main!important;
-			}
-
-			&:after{
-				border-bottom: 2px solid $color__text-main!important;
-			}
-		}
-	}
-
 }
-
-
-@media screen and (max-width: 768px){
-
-	#masthead.hide{
-		transform: translateY(-100%);
-
-		.menu-primary-container.show,
-		.hamburger.open{
-			transform: translateY(95px);
-		}
-	}	
+.menu-primary-container.show{
+	transform: translateX(0);
 }

@@ -36,6 +36,63 @@
 		?>
 	</div><!-- .entry-content -->
 
+
+
+	<!-- Custom Sections / Advanced Custom Fields Flexible Content -->
+
+	<?php if(have_rows('page_sections')): ?>
+		<?php while(have_rows('page_sections')): the_row(); ?>
+			
+			<!-- taglines -->
+			<?php if(get_row_layout() == 'tagline'): ?>
+
+				<?php  
+					$tagFields = get_sub_field('tagline_fields');
+
+					if($tagFields){
+						
+						foreach($tagFields as $tagField){
+
+							if($tagField == 'Title'){ 
+								echo '<h2>'.get_sub_field('tagline_title').'</h2>';
+							}elseif($tagField == 'Message'){
+								echo '<p>'.get_sub_field('tagline_content').'</p>';
+							}elseif($tagField == 'Call to Action'){
+								echo '<a href="'. get_sub_field('call_to_action_link') . '">' . get_sub_field('call_to_action_text') . '</a>';
+							}
+
+						}
+					
+					}
+				?>
+				
+			<!-- Section Content -->
+			<?php elseif(get_row_layout() == 'section_content'): ?>
+				<?php 
+
+					$columns = get_sub_field('columns');
+					if($columns == 1){ 
+						echo '<p>one column</p>';
+					}elseif($columns == 2){
+						echo '<p>two columns</p>';
+					}elseif($columns == 3){
+						echo '<p>three columns</p>';
+					}
+
+
+				?>
+
+
+
+
+
+			<?php endif; ?>
+
+
+
+		<?php endwhile; ?>
+	<?php endif; ?>
+
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
 			<?php

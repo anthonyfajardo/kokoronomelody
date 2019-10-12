@@ -249,3 +249,9 @@ function upcoming_workshops($attr){
 	get_template_part('template-parts/upcoming-workshops');
 	return ob_get_clean();
 }add_shortcode('upcoming-workshops', 'upcoming_workshops');
+
+
+function column1($attrib){
+	
+
+}

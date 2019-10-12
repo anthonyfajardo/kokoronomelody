@@ -17,18 +17,18 @@
 	});
 
 
-	$(document).ready(function(){
-		var zero = 0;
+	// $(document).ready(function(){
+	// 	var zero = 0;
 		
-		$(window).scroll(function(){
-			$('#masthead').toggleClass('hide', $(window).scrollTop() > zero);
+	// 	$(window).scroll(function(){
+	// 		$('#masthead').toggleClass('hide', $(window).scrollTop() > zero);
 
 
-			zero = $(window).scrollTop();
+	// 		zero = $(window).scrollTop();
 
 
-		})
-	});
+	// 	})
+	// });
 
 
 } )( jQuery );
