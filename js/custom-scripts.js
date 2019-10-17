@@ -30,6 +30,19 @@
 	// 	})
 	// });
 
+	$(function(){
+		$('.testimonial-container').flickity({
+			cellAlign: 'left',
+			contain: true,
+			wrapAround: true
+		});
+
+		$('.gallery-wrapper').flickity({
+			cellAlign: 'left',
+			contain: true,
+			wrapAround: true
+		});
+	});
 
 } )( jQuery );
 

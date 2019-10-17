@@ -11,19 +11,26 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if(has_post_thumbnail()): ?>
-	<header class="entry-header has-banner" style="background: url(<?php echo featured_image_url($post);?>); background-position: center; background-size: cover; background-repeat: no-repeat;">
+	<?php  
+		$banner = get_field('banner');
+		$bannerImage = get_field('banner_image');
+		$bannerVideo = get_field('banner_video');
+	?>
 
-			<?php 
-				$bannerTag = get_field('banner_tagline');
-				if($bannerTag){
-					echo '<div class="banner-tag">';
-					echo '<h1 class="entry-title">'.$bannerTag.'</h1>';
-					echo '</div>';
-				}
-			?>		
+	<?php if($banner == 'Image'): ?>
+		<header class="entry-header has-banner" style="background: url(<?php echo $bannerImage['url']; ?>); background-position: center; background-size: cover; background-repeat: no-repeat;">
 
-	</header>
+				<?php 
+					$bannerTag = get_field('banner_tagline');
+					if($bannerTag){
+						echo '<div class="banner-tag">';
+						echo '<h1 class="entry-title">'.$bannerTag.'</h1>';
+						echo '</div>';
+					}
+				?>		
+
+		</header>
+	
 	<?php endif; ?>
 	<div class="entry-content">
 		<?php
@@ -43,50 +50,32 @@
 	<?php if(have_rows('page_sections')): ?>
 		<?php while(have_rows('page_sections')): the_row(); ?>
 			
-			<!-- taglines -->
-			<?php if(get_row_layout() == 'tagline'): ?>
-
-				<?php  
-					$tagFields = get_sub_field('tagline_fields');
-
-					if($tagFields){
-						
-						foreach($tagFields as $tagField){
-
-							if($tagField == 'Title'){ 
-								echo '<h2>'.get_sub_field('tagline_title').'</h2>';
-							}elseif($tagField == 'Message'){
-								echo '<p>'.get_sub_field('tagline_content').'</p>';
-							}elseif($tagField == 'Call to Action'){
-								echo '<a href="'. get_sub_field('call_to_action_link') . '">' . get_sub_field('call_to_action_text') . '</a>';
-							}
-
-						}
-					
-					}
-				?>
-				
 			<!-- Section Content -->
-			<?php elseif(get_row_layout() == 'section_content'): ?>
+			<?php if(get_row_layout() == 'section_content'): ?>
+				<?php get_template_part('template-parts/section-content'); ?>
+				
+				
+			<!-- Testimonial -->
+			<?php elseif(get_row_layout() == 'testimonial'): ?>
+				<?php get_template_part('template-parts/testimonial'); ?>
+				
+
+			<!-- Instagram Feed -->
+			<?php elseif(get_row_layout() == 'instagram'): ?>
 				<?php 
-
-					$columns = get_sub_field('columns');
-					if($columns == 1){ 
-						echo '<p>one column</p>';
-					}elseif($columns == 2){
-						echo '<p>two columns</p>';
-					}elseif($columns == 3){
-						echo '<p>three columns</p>';
-					}
-
-
+					$instagram = get_sub_field('instagram_shortcode');
 				?>
-
-
-
-
-
+				<section class="instagram">
+					<?php echo do_shortcode($instagram); ?>
+				</section>
+			
+			<?php elseif(get_row_layout() == 'gallery_section'): ?>
+				<section class="gallery">
+					<?php get_template_part('template-parts/gallery'); ?>
+				</section>
+			
 			<?php endif; ?>
+
 
 
 

@@ -1,3 +1,15 @@
+<?php
+/**
+ * Template part for displaying upcoming workshops
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package kokoronomelody
+ */
+
+?>
+
+
 <?php 
 	$upcomingWorkshops = new WP_Query(array(
 		'post_type'	=> 'workshops'

@@ -1,1 +1,183 @@
 body{ position: relative; }
+
+
+/*
+* TESTIMONIAL GALLERY
+*/
+.testimonial-wrapper{
+  padding: 25px 0;
+  margin-bottom: 25px;
+
+  h2.testimonial-title{ 
+    text-align: center; 
+    margin-top: 0;
+    font-size: 18px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: 768px){
+    min-height: 400px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2.testimonial-title{ 
+      font-size: 21px; 
+      font-weight: 700;
+    }
+  }
+
+  @media screen and (min-width: 1000px){
+    min-height: 550px;
+    h2.testimonial-title{
+      font-size: 28px;
+    }
+  }
+
+}
+.testimonial-container{
+  padding: 15px;
+  // border: 1px solid red;
+  width: 100%;
+
+  /* position outside */
+  .flickity-prev-next-button.previous {
+    left: 0px;
+
+    @media screen and (min-width: 768px){
+      left: -40px;
+    }
+  }
+  .flickity-prev-next-button.next {
+    right: 0px;
+
+    @media screen and (min-width: 768px){
+      right: -40px;
+    }
+  }
+
+
+
+  @media screen and (min-width: 768px){
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: 1024px){
+    max-width: 1000px;
+    // border: 1px solid red;
+  }
+
+
+
+}
+
+.testimonial{
+  width: 100%;
+  padding: 0 15px;
+  // border: 1px solid blue;
+  p{ 
+    margin-top: 0;
+    font-size: 12px; 
+    text-align: center;
+    line-height: 1.75;
+    &:before,
+    &:after{
+      content: " \" ";
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    @media screen and (min-width: 1024px){
+      font-size: 16px;
+    }
+  }
+  h4{ text-align: right; }
+  
+  @media screen and (min-width: 768px){
+    p{ margin-bottom: 0; }
+    h4{ margin-top: 0; }
+  }
+
+}
+
+
+
+
+
+/* 
+* PHOTO GALLERIES
+*/
+
+
+.gallery{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+}
+.gallery-container{
+  width: 100%;
+  padding: 15px;
+  
+  h2{ 
+    margin-top: 0;
+    width: 100%;
+    color: $color__link;
+    font-size: 21px;
+  }
+
+  @media screen and (min-width: 768px){
+    h2{
+      width: 90%;
+      margin-left: auto; 
+      margin-right: auto;
+      font-size: 28px;      
+    }
+  }
+
+  @media screen and (min-width: 1024px){
+    h2{
+      font-size: 36px;
+    }
+  }  
+
+
+}
+.gallery-wrapper{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-bottom: 40px;
+
+  .flickity-prev-next-button.next{ right: -10px; }
+  .flickity-prev-next-button.previous{ left: -10px; }
+
+  @media screen and (min-width: 768px){
+    width: 90%;
+  }
+
+
+  .flickity-page-dots{
+    bottom: -25px;
+  }
+
+}
+
+.image{
+  
+  border: 1px solid white;
+  height: 0;
+  width: 33.33%;
+  padding-top: 33.33%;
+
+  @media screen and (min-width: 768px){
+    padding-top: 25%;
+  }
+
+
+}

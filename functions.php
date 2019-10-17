@@ -250,8 +250,8 @@ function upcoming_workshops($attr){
 	return ob_get_clean();
 }add_shortcode('upcoming-workshops', 'upcoming_workshops');
 
-
-function column1($attrib){
-	
-
-}
+function testimonial($attr){
+	ob_start();
+	get_template_part('template-parts/testimonial');
+	return ob_get_clean();
+}add_shortcode('getTestimonial', 'testimonial');
