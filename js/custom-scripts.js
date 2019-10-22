@@ -17,19 +17,6 @@
 	});
 
 
-	// $(document).ready(function(){
-	// 	var zero = 0;
-		
-	// 	$(window).scroll(function(){
-	// 		$('#masthead').toggleClass('hide', $(window).scrollTop() > zero);
-
-
-	// 		zero = $(window).scrollTop();
-
-
-	// 	})
-	// });
-
 	$(function(){
 		$('.testimonial-container').flickity({
 			cellAlign: 'left',
@@ -46,3 +33,33 @@
 
 } )( jQuery );
 
+
+
+(function(){
+
+
+	var defaultOptions = {
+
+
+		frameRate = 300, //(Hz)
+		animationTime: 600, //(ms)
+		stepSize: 100, // (px)
+
+		pulseAlgorithm: true,
+		pusleScale: 4,
+		pulseNormalize: 1,
+
+		accelerationDelta: 50,
+		accelerationMax: 3,
+
+		keyboardSupport: true,
+		arrowScroll: 50,
+
+		touchpadSupport: false,
+		fixedBackground: true,
+		excluded: ''
+	};
+
+	var options = defaultOptions;
+
+});
