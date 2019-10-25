@@ -43,7 +43,7 @@
 		<?php while ( $testimonial->have_posts() ) : $testimonial->the_post(); ?>
 			<div class="testimonial">
 				<?php the_content(); ?>
-				<h4>- <?php the_title(); ?></h4>
+				<h3>- <?php the_title(); ?></h3>
 			</div> <!-- /.testimonial -->
 			
 		<?php endwhile; ?>
