@@ -66,6 +66,16 @@
 					$instagram = get_sub_field('instagram_shortcode');
 				?>
 				<section class="instagram">
+
+					<div class="instagram-title">
+						<?php  
+							$instagramHandle = get_sub_field('instagram_handle');
+
+							echo '<h3><a href="https://www.instagram.com/'. $instagramHandle .'">Follow</a> </h3>';
+						?>
+					</div>			
+
+					
 					<?php echo do_shortcode($instagram); ?>
 				</section>
 			

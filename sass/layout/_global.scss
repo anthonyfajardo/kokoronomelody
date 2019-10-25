@@ -5,35 +5,31 @@ body{ position: relative; }
 * TESTIMONIAL GALLERY
 */
 .testimonial-wrapper{
+  margin: 25px 0;
   padding: 25px 0;
-  margin-bottom: 25px;
 
   h2.testimonial-title{ 
     text-align: center; 
     margin-top: 0;
-    font-size: 18px;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
 
   @media screen and (min-width: 768px){
-    min-height: 400px;
+    // min-height: 400px;
+    padding: 25px 0;
     display: flex; 
     justify-content: center;
     align-items: center;
     flex-direction: column;
     h2.testimonial-title{ 
-      font-size: 21px; 
       font-weight: 700;
     }
   }
 
   @media screen and (min-width: 1000px){
     min-height: 550px;
-    h2.testimonial-title{
-      font-size: 28px;
-    }
   }
 
 }
@@ -47,14 +43,14 @@ body{ position: relative; }
     left: 0px;
 
     @media screen and (min-width: 768px){
-      left: -40px;
+      // left: -10px;
     }
   }
   .flickity-prev-next-button.next {
     right: 0px;
 
     @media screen and (min-width: 768px){
-      right: -40px;
+      // right: -10px;
     }
   }
 
@@ -78,10 +74,8 @@ body{ position: relative; }
 .testimonial{
   width: 100%;
   padding: 0 15px;
-  // border: 1px solid blue;
   p{ 
     margin-top: 0;
-    font-size: 12px; 
     text-align: center;
     line-height: 1.75;
     &:before,
@@ -91,9 +85,6 @@ body{ position: relative; }
       font-weight: 900;
     }
 
-    @media screen and (min-width: 1024px){
-      font-size: 16px;
-    }
   }
   h4{ text-align: right; }
   
@@ -127,21 +118,19 @@ body{ position: relative; }
     margin-top: 0;
     width: 100%;
     color: $color__link;
-    font-size: 21px;
   }
 
   @media screen and (min-width: 768px){
-    h2{
-      width: 90%;
-      margin-left: auto; 
-      margin-right: auto;
-      font-size: 28px;      
-    }
+    h2{ text-align: center; }
   }
 
   @media screen and (min-width: 1024px){
+    margin: 50px auto;
+  }  
+
+  @media screen and (min-width: 1440px){
     h2{
-      font-size: 36px;
+      font-size: 2.25em;
     }
   }  
 
@@ -158,9 +147,8 @@ body{ position: relative; }
   .flickity-prev-next-button.previous{ left: -10px; }
 
   @media screen and (min-width: 768px){
-    width: 90%;
+    width: 100%;
   }
-
 
   .flickity-page-dots{
     bottom: -25px;
@@ -179,5 +167,40 @@ body{ position: relative; }
     padding-top: 25%;
   }
 
+  @media screen and (min-width: 1440px){
+    width: 25%;
+    padding-top: 18.75%;
+  }
 
+
+}
+
+
+// INSTAGRAM STYLING
+
+section.instagram{
+  @media screen and (min-width: 1024px){
+    margin: 50px 0;
+  }
+
+  .instagram-title{ 
+    margin: 2em 1em;
+    h3{
+        text-align: right;
+
+        a{
+            padding: 0.5em 1em 0.5em 1em;
+            border: 2px solid $color__link;      
+            
+            transition: 0.5s ease-in-out;
+
+            &:hover{
+              color: white;
+              background: $color__link;
+            }
+
+        }
+
+    }
+  }
 }

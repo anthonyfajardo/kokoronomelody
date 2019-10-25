@@ -32,9 +32,12 @@
 		}
 	?>
 
-	<?php $textColor = get_sub_field('text_color'); ?>
+	<?php 
+		$textColor = get_sub_field('text_color'); 
+		$titleColor = get_sub_field('title_color');
+	?>
 
-	<h2 class="testimonial-title" style="color: <?php echo $textColor; ?> "><?php echo get_sub_field('testimonial_header_title'); ?></h2>
+	<h2 class="testimonial-title" style="color: <?php echo $titleColor; ?> "><?php echo get_sub_field('testimonial_header_title'); ?></h2>
 
 	<div class="testimonial-container" style="color: <?php echo $textColor; ?> ">
 		<?php while ( $testimonial->have_posts() ) : $testimonial->the_post(); ?>

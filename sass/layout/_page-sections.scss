@@ -1,26 +1,30 @@
-.section-container{
+.section-wrapper{
+	margin: 25px 0;
+}
 
+// contains either the image or text block
+.section-container{
 	h2{ 
 		color: $color__link; 
-		font-size: 1.25em;	
 	}
-	
-	p{ font-size: 12px; }
+
 
 }
 
-
+// div that wraps the image content
 .image-wrapper{
 	position: relative;
 	margin: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 
 	.image-container{
 		width: 100%;
 		height: 0;
 		padding-top: 100%;
 		z-index: 1;
-
-
 	}
 
 	.caption-wrapper{
@@ -38,13 +42,14 @@
 
 		p{ 
 			color: white; 
-			font-size: 12px;
 			text-align: center;
 		}
 	}
 
 }
 
+
+// filter used on the image content when there's a caption on the image
 .filtered{
 	position: relative;
 	z-index: 1;
@@ -63,8 +68,13 @@
 
 
 .text-wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
 	text-align: center;
 	padding: 1em;
+	h2{ font-weight: 400; }
 	a{
 		display: block;
 		padding: 8px 10px 5px 8px;
@@ -83,30 +93,31 @@
 @media screen and (min-width: 768px){
 	.section-wrapper{
 		display: flex;
-		// border: 5px solid blue;
+		justify-content: space-around;
 	}
 
 	.column-1{
-		// border: 5px solid red;
 		width: 100%;
 		a{ 
 			display: inline-block; 
-			font-size: 12px;
 		}
 	}
 
 	.column-2{
 		width: 50%;
+		.image-wrapper{
+			margin: 0;
+			padding: 0.5em;
+
+		}
 		.text-wrapper{
 			text-align: left;
 			h2{ 
-				font-size: 1.5em; 
 				margin: 0;
 			}
 			
 			.button-wrapper{
 				a{ 
-					font-size: 12px; 
 					margin-bottom: 0;
 					display: inline-block;
 				}
@@ -115,19 +126,15 @@
 	}
 
 	.column-3{
-		width: 33.33%;
+
+		width: 32.5%;
 		text-align: center;
 		overflow: hidden;
 
 		.image-wrapper{ margin: 0; }
 
 		h2{ 
-			margin: 0; 
-			font-size: 16px;
-		}
-
-		.caption-wrapper{
-			
+			margin: 0;
 		}
 
 		.image-container{
@@ -137,19 +144,13 @@
 			.image-container{ transform: scale(1.4); }
 			.caption-wrapper{
 				h2{ color: $color__link-lighter; }
-
 			}
 		}
-
-
-
 	}
-
 }
 
 @media screen and (min-width: 940px){
 	.section-wrapper{
-		p{ font-size: 14px; }
 		
 		.text-wrapper{
 			.button-wrapper{
@@ -160,10 +161,6 @@
 }
 
 @media screen and (min-width: 1024px){
-	.section-wrapper{
-		p{ font-size: 16px; }
-	}
-	
 	.column-1,
 	.column-2,
 	.column-3{
@@ -184,16 +181,19 @@
 
 @media screen and (min-width: 1200px){
 	.section-wrapper{
-		max-width: 1200px;
-		margin: 25px auto;
+		max-width: 940px;
+		margin: 50px auto;
 
 		.text-wrapper{
-			h2{ font-size: 36px; }
-			p{ font-size: 1em; }
-
 			.button-wrapper{
 				a{ font-size: 18px; }
 			}
 		}
+	}
+}
+
+@media screen and (min-width: 1361px){
+	.section-wrapper{
+		max-width: 1200px;
 	}
 }

@@ -7,8 +7,7 @@
 	// echo '<p> Number of Columns: '.$columns.'</p>';
 ?>
 
-
-<div class="section-wrapper" <?php if($bgColor){ echo 'style="background-color:'. $bgColor .';"'; } ?> >
+<div class="section-wrapper">
 
 	
 	<!-- Loop for how many columns there are  -->
@@ -37,6 +36,7 @@
 					$title = get_sub_field('title'.$counter);
 					$message = get_sub_field('message'.$counter);
 					$sectionLink = get_sub_field('section_link_to');
+
 
 				?>
 				
