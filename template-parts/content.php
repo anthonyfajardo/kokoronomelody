@@ -9,51 +9,46 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				kokoronomelody_posted_on();
-				kokoronomelody_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+<article id="post-<?php the_ID(); ?>" <?php post_class('blog-wrapper'); ?>>
 
-	<?php kokoronomelody_post_thumbnail(); ?>
+	<div class="blog-container">
+		<a href="<?php the_permalink(); ?>" class="blog-image">
+			<div class="featured-image" style="background: url(<?php echo featured_image_url($post); ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
+				
+			</div> <!-- /.featured-image -->
+		</a>
+		<div class="blog-info-wrapper">
+			<a href="<?php the_permalink(); ?>">
+				<h2><?php the_title(); ?></h2>
+			</a>
+			<div class="blog-info-meta">
+				<div class="meta meta-icon">
+					<img src="<?php echo bloginfo('url').'/wp-content/uploads/2019/10/folder.png'; ?>">
+				</div>
+				
 
-	<div class="entry-content">
-		<?php
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'kokoronomelody' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
+				<div class="meta meta-category">
+					<span>In </span><?php the_category(); ?>
+				</div> <!-- /.meta-category -->
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'kokoronomelody' ),
-			'after'  => '</div>',
-		) );
-		?>
-	</div><!-- .entry-content -->
+				<div class="meta meta-tag">
+					<?php the_tags(); ?>
+				</div> <!-- /.meta-tag -->
 
-	<footer class="entry-footer">
-		<?php kokoronomelody_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+				<div class="meta meta-date">
+					<?php echo get_the_date('F j, Y'); ?>
+				</div> <!-- /.meta-date -->
+
+				<div class="meta meta-comments">
+					<a href="<?php the_permalink(); ?>/#comments">Leave a comment</a>
+				</div>
+				
+			</div> <!-- /.blog-info-meta -->
+			<div class="single-blog-content">
+				<?php the_content(); ?>	
+			</div>
+
+		</div> <!-- /.blog-info-wrapper -->
+	</div> <!-- /.blog-container -->	
 </article><!-- #post-<?php the_ID(); ?> -->

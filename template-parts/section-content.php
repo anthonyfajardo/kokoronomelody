@@ -76,10 +76,11 @@
 										<!-- CALL TO ACTION VARIABLES -->
 										<?php  
 											$ctaFields = get_sub_field('call_to_action_fields');
+											$ctaForms = get_sub_field('cta_form_shortcode');
 										?>
 											<!-- If the Call to Action is a Form -->
 											<?php if($ctaFields == 'Form'): ?> 
-												<?php echo get_sub_field('cta_form_shortcode'); ?>
+												<?php echo do_shortcode($ctaForms); ?>
 											<!-- If the Call to Action is a Button -->
 											<?php elseif($ctaFields == 'Button'): ?>
 												<?php if(have_rows('cta_button')): ?>

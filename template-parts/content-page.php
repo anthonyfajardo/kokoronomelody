@@ -43,8 +43,6 @@
 		?>
 	</div><!-- .entry-content -->
 
-
-
 	<!-- Custom Sections / Advanced Custom Fields Flexible Content -->
 
 	<?php if(have_rows('page_sections')): ?>
@@ -53,6 +51,12 @@
 			<!-- Section Content -->
 			<?php if(get_row_layout() == 'section_content'): ?>
 				<?php get_template_part('template-parts/section-content'); ?>
+
+			<!-- Video Section -->
+			<?php elseif(get_row_layout() == 'video'): ?>
+				<section id="video">
+					<?php get_template_part('template-parts/section-video'); ?>	
+				</section>			
 				
 				
 			<!-- Testimonial -->
@@ -82,6 +86,11 @@
 			<?php elseif(get_row_layout() == 'gallery_section'): ?>
 				<section class="gallery">
 					<?php get_template_part('template-parts/gallery'); ?>
+				</section>
+
+			<?php elseif(get_row_layout() == 'short_code'): ?>
+				<section class="custom-shortcode">
+					<?php echo do_shortcode(get_sub_field('shortcode_field')); ?>
 				</section>
 			
 			<?php endif; ?>
