@@ -268,3 +268,49 @@ header#masthead.scrolled{
 	
 
 }
+
+
+
+/****************
+*	PAGINATION STYLING
+****************/
+
+
+nav.post-navigation{
+	padding: 1em;
+
+	.nav-links{
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		.nav-previous,
+		.nav-next{
+			margin: 1em;
+			a{
+
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+			}
+		}
+
+		@media screen and (min-width: 768px){
+			justify-content: space-between;
+			max-width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+			.nav-previous{
+				a{ text-align: left; }
+			}
+			.nav-next{
+				a{ text-align: right; }
+			}
+			
+		}
+
+		@media screen and (min-width: 992px){
+			max-width: 100%;
+		}
+	}
+
+}

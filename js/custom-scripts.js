@@ -1,3 +1,4 @@
+
 ( function( $ ) {
 
 	console.log('custom scripts loading!');
@@ -30,5 +31,17 @@
 			wrapAround: true
 		});
 	});
+
+	$(document).ready(function(){
+		var navHeight = $("#masthead").height();
+			navHeight = navHeight + 50;
+		$(".blog-page").css("margin-top", navHeight);
+		$("#secondary").css("margin-top", navHeight);
+		$(".single-blog").css("margin-top", navHeight);
+	});
+
+	$(function(){
+
+	})
 
 } )( jQuery );

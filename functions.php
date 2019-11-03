@@ -172,7 +172,9 @@ function kokoronomelody_styles() {
 	
 	wp_enqueue_style( 'kokoronomelody-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( ' kokoronomelody-fonts', 'https://fonts.googleapis.com/css?family=Martel:300,400,700,900&display=swap');
+	wp_enqueue_style( ' kokoronomelody-fonts', 'https://fonts.googleapis.com/css?family=Martel+Sans|Martel:300,400,700,900&display=swap');
+
+	wp_enqueue_style( 'font-awesome', 'https://pro.fontawesome.com/releases/v5.11.2/css/all.css', array(), null );
 
 }
 add_action( 'wp_enqueue_scripts', 'kokoronomelody_styles');
@@ -243,15 +245,96 @@ function featured_image_url($currentPost){
 	$image_url= wp_get_attachment_url($image_id);
 	return $image_url;
 }
+
+
 	
-function upcoming_workshops($attr){
-	ob_start();
+function upcoming_workshops($pages){
+
 	get_template_part('template-parts/upcoming-workshops');
-	return ob_get_clean();
-}add_shortcode('upcoming-workshops', 'upcoming_workshops');
+}
+
+function workshops($atts){
+	
+	upcoming_workshops($atts['pages']);
+
+}add_shortcode('workshops', 'workshops');
 
 function testimonial($attr){
 	ob_start();
 	get_template_part('template-parts/testimonial');
 	return ob_get_clean();
 }add_shortcode('getTestimonial', 'testimonial');
+
+
+add_filter('widget_text', 'do_shortcode');
+
+function recentPosts($attr){
+	ob_start();
+	get_template_part('template-parts/widget-recent-posts');
+	return ob_get_clean();
+}add_shortcode('custom_recent_posts', 'recentPosts');
+
+/* 
+Remove [ ... ] from the_excerpt
+*/
+function new_excerpt_more( $more ) {
+    return ' ...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+/*
+*	Change the excerpt length 
+*/
+
+function custom_excerpt_length($length){
+	return 35;
+}
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
+
+
+
+/**
+*	Pagination
+*/
+
+if(!function_exists('post_pagination')):
+	function post_pagination(){
+		global $wp_query;
+
+		$big = 999999999; // need an unlikely integer
+		$translated = __( 'Page', 'mytextdomain' ); // Supply translatable string
+
+		echo paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages,
+		        'before_page_number' => '<span class="screen-reader-text">'.$translated.' </span>'
+		) );
+	}
+endif;
+
+
+
+/*
+*	CUSTOM SEARCH FORM 
+*/
+
+/**
+ * Generate custom search form
+ *
+ * @param string $form Form HTML.
+ * @return string Modified form HTML.
+ */
+function wpdocs_my_search_form( $form ) {
+    $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
+    <div class="search-wrapper"><label class="screen-reader-text" for="s">' . __( 'Search for:' ) . '</label>
+    <input type="text" value="' . get_search_query() . '" name="s" id="s" />
+    <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" />
+    </div>
+    </form>';
+ 
+    return $form;
+}
+add_filter( 'get_search_form', 'wpdocs_my_search_form' );

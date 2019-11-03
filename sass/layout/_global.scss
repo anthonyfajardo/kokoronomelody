@@ -1,3 +1,6 @@
+@import "workshop";
+
+
 body{ position: relative; }
 
 
@@ -49,7 +52,7 @@ body{ position: relative; }
   }
 
   @media screen and (min-width: 768px){
-    max-width: 80%;
+    max-width: 75%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -59,7 +62,7 @@ body{ position: relative; }
   }
 
   @media screen and (min-width: 1440px){
-    max-width: 1100px;
+    max-width: 940px;
   }
 
 
@@ -112,6 +115,7 @@ body{ position: relative; }
     margin-top: 0;
     width: 100%;
     color: $color__link;
+    font-weight: 400;
   }
 
   @media screen and (min-width: 768px){
@@ -120,16 +124,34 @@ body{ position: relative; }
 
   @media screen and (min-width: 1024px){
     margin: 50px auto;
-  }  
-
-  @media screen and (min-width: 1440px){
-    h2{
-      font-size: 2.25em;
+    h2{ 
+      font-size: 2em; 
+      font-style: italic;
     }
   }  
-
-
 }
+
+
+
+
+  .flickity-prev-next-button.next{ right: 0px; }
+  .flickity-prev-next-button.previous{ left: 0px; }
+
+  .flickity-prev-next-button.next,
+  .flickity-prev-next-button.previous{  
+    background: rgba(177,146,85,0.4); 
+    border-radius: 0;
+    width: 30px;
+    height: 60px;
+    transition: 0.3s ease-in-out;
+
+    &:hover{
+      background: rgba(177,146,85,1); 
+    }
+  }
+
+
+
 .gallery-wrapper{
   width: 100%;
   margin-left: auto;
@@ -137,11 +159,24 @@ body{ position: relative; }
   height: auto;
   margin-bottom: 40px;
 
-  .flickity-prev-next-button.next{ right: -10px; }
-  .flickity-prev-next-button.previous{ left: -10px; }
+  .flickity-prev-next-button.next{ right: 0px; }
+  .flickity-prev-next-button.previous{ left: 0px; }
 
-  @media screen and (min-width: 768px){
-    width: 100%;
+  .flickity-prev-next-button.next,
+  .flickity-prev-next-button.previous{  
+    background: rgba(177,146,85,0.4); 
+    border-radius: 0;
+    width: 30px;
+    height: 60px;
+    transition: 0.3s ease-in-out;
+
+    &:hover{
+      background: rgba(177,146,85,1); 
+    }
+  }
+
+  @media screen and (min-width: 1280px){
+    max-width: 1280px;
   }
 
   .flickity-page-dots{
@@ -156,16 +191,6 @@ body{ position: relative; }
   height: 0;
   width: 33.33%;
   padding-top: 33.33%;
-
-  @media screen and (min-width: 768px){
-    padding-top: 25%;
-  }
-
-  @media screen and (min-width: 1440px){
-    width: 25%;
-    padding-top: 18.75%;
-  }
-
 
 }
 
@@ -199,3 +224,5 @@ section.instagram{
     }
   }
 }
+
+

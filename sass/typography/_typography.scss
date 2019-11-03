@@ -14,11 +14,12 @@ textarea {
 	}
 
 	@media screen and (min-width: 1024px){
-		@include font-size(0.9);
+		@include font-size(0.85);
 	}
 
-	@media screen and (min-width: 1440px){
+	@media screen and (min-width: 1400px){
 		@include font-size(1);
+		letter-spacing: 1.125px;
 	}
 }
 

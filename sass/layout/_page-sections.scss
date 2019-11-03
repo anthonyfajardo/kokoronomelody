@@ -97,6 +97,34 @@
 	}
 }
 
+.column-1{
+	.wpforms-container{
+		// border: 1px solid red;
+		form#wpforms-form-494{
+			// border: 1px solid blue;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		
+			.wpforms-field{
+				// border: 1px solid orange;
+				padding: 0;
+				input#wpforms-494-field_1{
+					// border: 1px solid green;
+					max-width: 100%;
+					padding: 0;
+				}	
+			}
+
+			.wpforms-submit-container{
+				padding-top: 0;
+				height: 100%;
+			}
+
+		}
+	}
+}
+
 
 @media screen and (min-width: 768px){
 	.section-wrapper{
@@ -105,6 +133,7 @@
 	}
 
 	.column-1{
+		// border: 1px solid red;
 		width: 100%;
 		a{ 
 			display: inline-block; 
@@ -114,6 +143,10 @@
 			max-width: 75%;
 			margin-left: auto;
 			margin-right: auto;
+		}
+		h2{ 
+			margin: 0; 
+			line-height: 1.5;
 		}
 	}
 
@@ -132,7 +165,7 @@
 			
 			.button-wrapper{
 				a{ 
-					margin-bottom: 0;
+					margin-bottom: 1em;
 					display: inline-block;
 				}
 			}
@@ -167,6 +200,14 @@
 		.text-wrapper{
 			justify-content: flex-start!important;
 		}
+
+	}
+}
+
+@media screen and (min-width: 940px){
+	.column-3{
+		h2{ font-size: 16px; }
+		p{ font-size: 12px; }
 	}
 }
 
@@ -187,17 +228,73 @@
 		padding-bottom: 50px;
 	}
 
+	.column-3{
+		align-items: space-between;
+		p{ font-size: 1em; }
+	}
+
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1280px){
 	.section-wrapper{
 		max-width: 940px;
 		margin: 50px auto;
 	}
+
+	.column-3{
+		h2{ font-size: 21px; }
+	}
 }
 
-@media screen and (min-width: 1361px){
+@media screen and (min-width: 1400px){
 	.section-wrapper{
 		max-width: 1200px;
 	}
 }
+
+
+
+
+
+/*
+*	Video Section
+*/
+
+section#video{
+	padding: 1em;
+	margin: 25px auto;
+	.video-container{
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-top: 56.25%;
+		overflow: hidden;	
+
+		@media screen and (min-width: 768px){
+			width: 80%;
+			padding-top: 45%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@media screen and (min-width: 940px){
+			max-width: 50%;
+			padding-top: 28.125%;
+
+		}
+
+	}
+
+	.video-container iframe,
+	.video-container object,
+	.video-container embed { 
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}	
+
+}
+
+

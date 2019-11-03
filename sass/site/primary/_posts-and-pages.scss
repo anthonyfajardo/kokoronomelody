@@ -30,7 +30,7 @@
 
 .entry-header.has-banner{
 	width: 100%;
-	min-height: 100vh;
+	height: 100vh;
 	display: flex;
 	@extend .flex-centered;
 	position: relative;
@@ -43,16 +43,17 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		background: rgba(128,128,128,0.2);
+		background: rgba(128,128,128,0.3);
 		z-index: -1;
 	}
 
 	@media screen and (min-width: 768px){
-		min-height: 57vh;
+		min-height: 57vh;		
+		max-height: 700px;
 	}
 
 	@media screen and (min-width: 1024px){
-		min-height: 100vh;
+		min-height: 75vh;
 	}
 }
 
@@ -81,3 +82,19 @@
 }
 
 
+
+
+/*
+*	COMMENTS SECTION
+*/
+
+.comments-area{
+	padding: 1em;
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and (min-width: 992px){
+		max-width: 100%;
+	}
+}
