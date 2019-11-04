@@ -10,10 +10,12 @@
 		<?php while ( $recentPosts->have_posts() ) : $recentPosts->the_post(); ?>
 			<div class="recent-post-wrapper">
 				<div class="recent-image">
-					<?php  echo get_the_post_thumbnail($page->ID, 'thumbnail'); ?>	
+					<a href="<?php the_permalink(); ?>">
+						<?php  echo get_the_post_thumbnail($page->ID, 'thumbnail'); ?>	
+					</a>
 				</div>				
 				<div class="recent-info">
-					<h4><?php the_title(); ?></h4>
+					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 					<span class="date"><?php echo get_the_date('F j, Y'); ?></span>
 				</div>
 				

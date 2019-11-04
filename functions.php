@@ -269,9 +269,7 @@ function testimonial($attr){
 add_filter('widget_text', 'do_shortcode');
 
 function recentPosts($attr){
-	ob_start();
 	get_template_part('template-parts/widget-recent-posts');
-	return ob_get_clean();
 }add_shortcode('custom_recent_posts', 'recentPosts');
 
 /* 

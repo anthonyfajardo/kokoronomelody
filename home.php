@@ -16,7 +16,7 @@ get_header();
 
 ?>
 
-<?php if(is_home() && get_option('page_for_posts')): ?>
+<!-- <?php if(is_home() && get_option('page_for_posts')): ?>
 	<?php 
 		$img = wp_get_attachment_image_src(get_post_thumbnail_id(get_option('page_for_posts')),'full'); 
 	    $featured_image = $img[0];
@@ -27,7 +27,7 @@ get_header();
 		<header class="entry-header has-banner" style="background: url(<?php echo $featured_image; ?>); background-position: center; background-size: cover; background-repeat: no-repeat;">
 		</header>
 	
-	<?php endif; ?>
+	<?php endif; ?> -->
 
 <div class="blog-wrapper">
 	<div id="primary" class="content-area blog">
@@ -79,7 +79,7 @@ get_header();
 									</div>								
 								</div>
 
-							</div>
+							</div> <!-- /.blog-info-wrapper -->
 						</div> <!-- /.blog-container -->
 					<?php endwhile; ?>
 					<div class="pagination"><?php post_pagination(); ?></div>	
@@ -91,6 +91,6 @@ get_header();
 
 	<?php get_sidebar(); ?>
 </div> <!-- /.blog-wrapper -->
-<?php get_footer(); ?>
+<?php get_footer(); 
 
 	

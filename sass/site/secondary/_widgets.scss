@@ -60,10 +60,11 @@ aside#secondary{
   .recent-info{
     width: 75%;
     padding-left: 10px;
-    h4{ 
+    a{ 
       margin: 0; 
       font-size: 14px;
-      font-weight: 900;
+      font-weight: 700;
+      display: block;
     }
     p{ margin: 0; }
     span.date{ font-size: 11px; }

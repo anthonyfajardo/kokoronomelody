@@ -268,3 +268,27 @@ aside#secondary{
 		}
 	}
 }
+
+
+
+
+
+/**
+*  Search Page Styling
+**/
+
+header.search-header{
+	border: 1px solid #eee;
+	margin-bottom: 50px;
+	border-radius: 30px;
+	.page-title{ 
+		margin: 0; 
+		background: #f2f2f2;		
+		display: inline-block;
+		padding: 8px 20px;
+		border-radius: 30px;
+		margin: 3px;
+		color: black;
+		font-weight: 900;
+	}
+}
