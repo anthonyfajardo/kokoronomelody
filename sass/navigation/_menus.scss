@@ -248,7 +248,7 @@ ul#menu-primary{
 
 
 header#masthead.scrolled{
-	background: rgba(255,255,255,0.9);
+	background: rgba(255,255,255,1);
 	padding-top: 0;
 	padding-bottom: 0;
 	.hamburger{
@@ -313,4 +313,15 @@ nav.post-navigation{
 		}
 	}
 
+}
+
+
+.blog-nav{
+	.menu-primary-container{
+		#menu-primary{
+			li{
+				a{ color: $color__link; }
+			}
+		}
+	}
 }

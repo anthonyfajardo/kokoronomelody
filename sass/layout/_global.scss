@@ -1,5 +1,7 @@
 @import "workshop";
 
+@import "contact";
+
 
 body{ position: relative; }
 
@@ -199,29 +201,18 @@ body{ position: relative; }
 
 section.instagram{
 
-  @media screen and (min-width: 1024px){
-    margin: 50px auto;
+  #sb_instagram{ 
+    margin-bottom: 1em; 
+
+    span.sbi_follow_btn a{ 
+      margin-top: 50px;
+      background: $color__link; 
+      
+    }
   }
 
-  .instagram-title{ 
-    margin: 2em 1em;
-    h3{
-        text-align: right;
-
-        a{
-            padding: 0.5em 1em 0.5em 1em;
-            border: 2px solid $color__link;      
-            
-            transition: 0.5s ease-in-out;
-
-            &:hover{
-              color: white;
-              background: $color__link;
-            }
-
-        }
-
-    }
+  @media screen and (min-width: 1024px){
+    margin: 50px auto;
   }
 }
 

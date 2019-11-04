@@ -29,7 +29,12 @@
 			<?php the_custom_logo(); ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
+		<?php if(is_home() || is_archive() || is_search() || is_page( $page = 'contact' )): ?>
+			<nav id="site-navigation" class="main-navigation blog-nav">
+		<?php else: ?>
+			<nav id="site-navigation" class="main-navigation">
+		<?php endif; ?>
+		
 			<div class="hamburger">
 				<span></span>
 				<span></span>

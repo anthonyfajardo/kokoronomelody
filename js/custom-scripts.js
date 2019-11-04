@@ -38,10 +38,18 @@
 		$(".blog-page").css("margin-top", navHeight);
 		$("#secondary").css("margin-top", navHeight);
 		$(".single-blog").css("margin-top", navHeight);
+
+		var mediaQuery = window.matchMedia("(min-width: 1024px)");
+
+		if(mediaQuery.matches){
+			$(".contact-content").css({
+				"margin-top" : navHeight - 35,
+				"max-height" : "86vh",
+				"overflow-y" : "scroll"
+			});
+			
+		}
+
 	});
-
-	$(function(){
-
-	})
 
 } )( jQuery );
