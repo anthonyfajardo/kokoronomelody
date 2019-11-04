@@ -11,8 +11,12 @@ get_header();
 ?>
 
 <div class="blog-wrapper">
-
-	<section id="primary" class="content-area blog">
+	<?php if(is_search()): ?>
+		<section id="primary" class="content-area blog search-page">
+	<?php else: ?>
+		<section id="primary" class="content-area blog">
+	<?php endif; ?>
+	
 		<main id="main" class="site-main blog-page">
 
 		<?php if ( have_posts() ) : ?>

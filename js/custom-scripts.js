@@ -38,6 +38,8 @@
 		$(".blog-page").css("margin-top", navHeight);
 		$("#secondary").css("margin-top", navHeight);
 		$(".single-blog").css("margin-top", navHeight);
+		$(".links-wrapper").css("padding-top", navHeight);
+
 
 		var mediaQuery = window.matchMedia("(min-width: 1024px)");
 

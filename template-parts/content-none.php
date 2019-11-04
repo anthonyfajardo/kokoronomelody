@@ -34,6 +34,8 @@
 		elseif ( is_search() ) :
 			?>
 
+			<img src="http://localhost/kokoronomelody/wp-content/uploads/2019/11/magnifying-glass.png" alt="">
+
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'kokoronomelody' ); ?></p>
 			<?php
 			get_search_form();
