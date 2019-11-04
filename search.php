@@ -46,17 +46,17 @@ get_header();
 				<div class="pagination"><?php post_pagination(); ?></div>	
 
 				<?php else : ?>
-				<div class="blog-container">
 					<?php get_template_part( 'template-parts/content', 'none' ); ?>
-				</div> <!-- /.blog-container -->
-
+				
 			</section> <!-- /.content-wrapper -->
 		<?php endif; ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-	<?php get_sidebar(); ?> <!-- #aside -->
+	<?php if(have_posts()): ?>
+		<?php get_sidebar(); ?> <!-- #aside -->
+	<?php endif; ?>
 
 </div> <!-- /.blog-wrapper -->
 <?php get_footer();

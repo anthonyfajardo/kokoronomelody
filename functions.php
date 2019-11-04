@@ -266,11 +266,16 @@ function testimonial($attr){
 }add_shortcode('getTestimonial', 'testimonial');
 
 
+function recentPosts($attr){
+	ob_start();
+	get_template_part('template-parts/widget-recent-posts');
+	return ob_get_clean();
+}add_shortcode('custom_recent_posts', 'recentPosts');
+
+remove_filter('widget_text_content', 'wpautop');
+
 add_filter('widget_text', 'do_shortcode');
 
-function recentPosts($attr){
-	get_template_part('template-parts/widget-recent-posts');
-}add_shortcode('custom_recent_posts', 'recentPosts');
 
 /* 
 Remove [ ... ] from the_excerpt
