@@ -23,13 +23,15 @@
 			cellAlign: 'left',
 			contain: true,
 			wrapAround: true,
-			adaptiveHeight: true
+			adaptiveHeight: true,
+			pageDots: false
 		});
 
 		$('.gallery-wrapper').flickity({
 			cellAlign: 'left',
 			contain: true,
-			wrapAround: true
+			wrapAround: true,
+			pageDots: false
 		});
 	});
 
