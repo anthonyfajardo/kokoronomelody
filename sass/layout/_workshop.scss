@@ -122,7 +122,7 @@ h2.workshop-page-title{
 			width: 32%;
 
 			.workshop-content{
-				p{ font-size: 14px; }
+				p{ font-size: 12px; }
 			}			
 		}
 
@@ -133,7 +133,7 @@ h2.workshop-page-title{
 
 			.workshop-container{
 				width: 100%;	
-				grid-template-rows: 0.4fr minmax(100px, 155px) minmax(300px, 400px);
+				grid-template-rows: 0.4fr minmax(100px, 155px) minmax(300px, auto);
 			}
 		}
 
@@ -148,6 +148,9 @@ h2.workshop-page-title{
 					font-size: 18px;
 					font-weight: 900;
 				}
+			}
+			.workshop-content{
+				p{ font-size: 14px; }
 			}
 		}
 

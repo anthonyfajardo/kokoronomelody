@@ -84,12 +84,19 @@ get_header();
 					<?php endwhile; ?>
 					<div class="pagination"><?php post_pagination(); ?></div>	
 				</section> <!-- /.blog-wrapper -->
+			<?php else: ?>
+				<div class="no-posts">
+					<h1>Blog Posts Coming Very Soon!</h1>
+					<p>Stay Tuned!</p>
+				</div> <!-- /.no-posts -->
 			<?php endif; ?>
 		</main>
 	</div>
 
-
-	<?php get_sidebar(); ?>
+	<?php if(have_posts()): ?>
+		<?php get_sidebar(); ?>
+	<?php endif; ?>
+	
 </div> <!-- /.blog-wrapper -->
 <?php get_footer(); 
 

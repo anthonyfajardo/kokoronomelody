@@ -1,3 +1,11 @@
+.no-posts{
+	min-height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .blog-wrapper{
 	display: flex;
 	flex-wrap: wrap;
