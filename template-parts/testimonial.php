@@ -11,7 +11,8 @@
 
 <?php  
 	$testimonial = new WP_Query(array(
-		'post_type'	=> 'testimonial'
+		'post_type'	=> 'testimonial',
+		'posts_per_page' => -1
 	));
 ?>
 
@@ -35,13 +36,20 @@
 	<?php 
 		$textColor = get_sub_field('text_color'); 
 		$titleColor = get_sub_field('title_color');
+		
 	?>
 
+	
 	<h2 class="testimonial-title" style="color: <?php echo $titleColor; ?> "><?php echo get_sub_field('testimonial_header_title'); ?></h2>
 
 	<div class="testimonial-container" style="color: <?php echo $textColor; ?> ">
 		<?php while ( $testimonial->have_posts() ) : $testimonial->the_post(); ?>
-			<div class="testimonial">
+			
+
+			
+
+
+			<div class="testimonial">		
 				<?php the_content(); ?>
 				<h3>- <?php the_title(); ?></h3>
 			</div> <!-- /.testimonial -->

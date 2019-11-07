@@ -265,6 +265,12 @@ function testimonial($attr){
 	return ob_get_clean();
 }add_shortcode('getTestimonial', 'testimonial');
 
+function social_media($atts){
+	ob_start();
+	get_template_part('template-parts/social-media');
+	return ob_get_clean();
+}add_shortcode('social-media', 'social_media');
+
 
 function recentPosts($attr){
 	ob_start();

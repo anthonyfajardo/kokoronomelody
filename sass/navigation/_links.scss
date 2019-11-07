@@ -29,10 +29,6 @@ a {
 
 .links-page{
 
-	background: rgb(239,216,210);
-	background: linear-gradient(0deg, rgba(239,216,210,1) 0%, rgba(209,171,105,1) 100%);
-
-
 	.links-wrapper{
 		padding: 50px 1em;
 
@@ -43,7 +39,7 @@ a {
 		}
 
 		@media screen and (min-width: 1024px){
-			max-width: 768px;
+			max-width: 700px;
 			padding: 100px 0;
 		}
 
@@ -57,7 +53,7 @@ a {
 			width: 50%;
 
 			@media screen and (min-width: 768px){
-				width: 35%;
+				width: 25%;
 				margin-bottom: 50px;
 			}
 		}	
@@ -65,7 +61,9 @@ a {
 	
 
 	ul.links-container{
-		margin: 0;
+		width: 75%;
+
+		margin: 0 auto;
 		padding: 0;
 		
 		li{
@@ -78,15 +76,18 @@ a {
 				padding: 1em;
 				font-weight: 700;
 				color: $color__link-hover;
-				background: rgba(255,255,255,0.5);
 				border: 5px double $color__link-hover;
 				display: inline-block;
 				width: 100%;
-				transition: 0.5s ease-in-out;
+				transition: 0.3s ease-in-out;
 
 
 				@media screen and (min-width: 768px){
 					font-size: 18px;
+				}
+
+				@media screen and (min-width: 1280px){
+					font-size: 16px;
 				}
 
 				&:hover{

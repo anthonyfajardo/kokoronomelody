@@ -22,7 +22,8 @@
 		$('.testimonial-container').flickity({
 			cellAlign: 'left',
 			contain: true,
-			wrapAround: true
+			wrapAround: true,
+			adaptiveHeight: true
 		});
 
 		$('.gallery-wrapper').flickity({

@@ -32,6 +32,10 @@
 		</header>
 	
 	<?php endif; ?>
+
+	<?php $content = get_the_content(); ?>
+
+	<?php if(!empty($content)): ?>
 	<div class="entry-content">
 		<?php
 		the_content();
@@ -42,6 +46,8 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
+
+	<?php endif; ?>
 
 	<!-- Custom Sections / Advanced Custom Fields Flexible Content -->
 
@@ -61,7 +67,12 @@
 				
 			<!-- Testimonial -->
 			<?php elseif(get_row_layout() == 'testimonial'): ?>
-				<?php get_template_part('template-parts/testimonial'); ?>
+				<?php 
+					$title = get_the_title(); 
+					set_query_var('title', $title);
+					get_template_part('template-parts/testimonial');
+				?>
+				
 				
 
 			<!-- Instagram Feed -->
