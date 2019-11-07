@@ -48,11 +48,11 @@ footer.site-footer{
 		align-items: center;
 		padding: 1em;
 		border: 1px solid $color__link;
-		min-width: 50px;
-		min-height: 50px;
+		width: 50px;
+		height: 50px;
 		margin: 2px;
 		i.fab{ font-size: 1.5em; }
-		transition: 0.3s ease-in-out;
+		transition: 0.5s ease-in-out;
 
 		&:hover{
 			background: $color__link;
@@ -157,22 +157,40 @@ footer.site-footer{
 	}
 }
 
-
-.facebook{
-	&:hover{
-		background: $color__facebook!important;
-	}
+a.facebook-button{
+  &:hover{
+    background: $color__facebook!important;
+  }
 }
 
-.instagram{
-	&:hover{
-		background: $color__instagram;
-		background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)!important;
+a.instagram-button{
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	&:before{
+		content: "";
+		position: absolute;
+		background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );	
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transition: 0.5s ease-in-out;
+		z-index: -1;
+		opacity: 0;
 	}
+
+  &:hover{
+		&:before{
+			opacity: 1;
+		}
+  }
 }
 
-.youtube{
-	&:hover{
-		background: $color__youtube!important;
-	}
+a.youtube-button{
+  &:hover{
+    background: $color__youtube!important;
+  }
 }
