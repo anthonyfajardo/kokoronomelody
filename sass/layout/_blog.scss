@@ -90,7 +90,7 @@
 	width: 20px;
 	height: 20px;
 }
-.meta{ margin: 0 5px; }
+.meta{ margin: 0 5px 0 0; }
 .meta-category{
 	display: flex;
 	flex-wrap: wrap;
@@ -105,7 +105,6 @@
 	font-size: 0.9em;
 	line-height: 2;
 	display: flex;
-	// justify-content: center;
 	align-items: center;
 	color: #999999;
 	flex-wrap: wrap;

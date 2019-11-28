@@ -29,7 +29,7 @@
 			<?php the_custom_logo(); ?>
 		</div><!-- .site-branding -->
 
-		<?php if(is_home() || is_archive() || is_search() || is_page( array('contact', 'links'))): ?>
+		<?php if(is_home() || is_archive() || is_search() || is_single() || is_page( array('contact', 'links'))): ?>
 			<nav id="site-navigation" class="main-navigation blog-nav">
 		<?php else: ?>
 			<nav id="site-navigation" class="main-navigation">
