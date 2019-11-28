@@ -1,7 +1,7 @@
 footer.site-footer{
 	// border: 1px solid red;
 	background: $color__pink;
-	padding: 2em 1em;
+	padding: 0 1em;
 }
 
 #footerSidebar{
@@ -147,7 +147,7 @@ footer.site-footer{
 		.site-info{ 
 			// border: 1px solid red;
 			max-width: 90%; 
-			min-height: 60vh;
+			min-height: 40vh;
 			display: flex;	
 			flex-direction: column;
 			justify-content: space-around;		
