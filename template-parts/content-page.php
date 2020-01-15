@@ -93,6 +93,11 @@
 				<section class="custom-shortcode">
 					<?php echo do_shortcode(get_sub_field('shortcode_field')); ?>
 				</section>
+
+			<?php elseif(get_row_layout() == 'clients'): ?>
+				<section class="clients-section">
+					<?php get_template_part('template-parts/clients') ?>
+				</section>
 			
 			<?php endif; ?>
 
