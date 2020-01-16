@@ -310,6 +310,7 @@ section.clients-section{
 
 .clients-section-wrapper{
 	margin: 50px 0;
+	width: 100%;
 	.client-section-meta{
 		padding: 1em;
 		h2{ 
@@ -323,10 +324,10 @@ section.clients-section{
 		flex-wrap: wrap;
 		justify-content: center;
 		.client-logo{
-			width: 46%;
+			width: 30%;
 			height: 0;
-			padding-top: 48%;
-			margin: 1%;
+			padding-top: 32%;
+			margin: 2%;
 
 		}
 	}
