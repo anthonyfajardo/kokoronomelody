@@ -18,19 +18,19 @@
 	?>
 
 	<?php if($banner == 'Image'): ?>
-		<header class="entry-header has-banner" style="background: url(<?php echo $bannerImage['url']; ?>); background-position: center; background-size: cover; background-repeat: no-repeat;">
+		<?php if($bannerImage): ?>
+			<header id="headerImage" class="entry-header has-banner" style="background-image: url(<?php echo $bannerImage['url']; ?>); background-position: center; background-size: cover; background-repeat: no-repeat;">
 
-				<?php 
-					$bannerTag = get_field('banner_tagline');
-					if($bannerTag){
-						echo '<div class="banner-tag">';
-						echo '<h1 class="entry-title">'.$bannerTag.'</h1>';
-						echo '</div>';
-					}
-				?>		
-
-		</header>
-	
+					<?php 
+						$bannerTag = get_field('banner_tagline');
+						if($bannerTag){
+							echo '<div class="banner-tag">';
+							echo '<h1 class="entry-title">'.$bannerTag.'</h1>';
+							echo '</div>';
+						}
+					?>		
+			</header>
+		<?php endif; ?>	
 	<?php endif; ?>
 
 	<?php $content = get_the_content(); ?>
@@ -73,7 +73,15 @@
 					get_template_part('template-parts/testimonial');
 				?>
 				
+			<!-- WYSIWYG EDITOR -->
+			<?php elseif(get_row_layout() == 'content_editor'): ?>
 				
+				<section class="content-editor">
+					<div class="editor-wrapper">
+						<?php the_sub_field('wysiwyg_editor'); ?>	
+					</div>
+					
+				</section>
 
 			<!-- Instagram Feed -->
 			<?php elseif(get_row_layout() == 'instagram'): ?>

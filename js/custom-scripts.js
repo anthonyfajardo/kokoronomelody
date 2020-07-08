@@ -57,4 +57,19 @@
 
 	});
 
+
+	$(document).ready(function(){
+
+		var hasBGImage = document.getElementById('headerImage');
+
+		if(hasBGImage){
+			console.log('HAS BG IMAGE');
+		}else{
+			console.log('NO IMAGE');
+			$('#site-navigation').addClass('blog-nav');
+		}
+
+
+	});
+
 } )( jQuery );

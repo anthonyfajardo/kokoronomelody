@@ -285,7 +285,8 @@ nav.post-navigation{
 		flex-wrap: wrap;
 		.nav-previous,
 		.nav-next{
-			margin: 1em;
+			margin: 1em 0;
+			width: 49%;
 			a{
 
 				text-align: center;

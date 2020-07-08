@@ -11,7 +11,8 @@
 			<div class="recent-post-wrapper">
 				<div class="recent-image">
 					<a href="<?php the_permalink(); ?>">
-						<?php  echo get_the_post_thumbnail($page->ID, 'thumbnail'); ?>	
+						<!-- <?php  echo get_the_post_thumbnail($page->ID, 'thumbnail'); ?>	 -->
+						<?php the_post_thumbnail('thumbnail'); ?>
 					</a>
 				</div>				
 				<div class="recent-info">

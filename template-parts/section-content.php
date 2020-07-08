@@ -1,7 +1,7 @@
 <?php 
 	/* VARIABLES */
 	$ordinalArray = ['first', 'second', 'third'];
-	echo $ordinalNum[0];
+	// echo $ordinalNum[0];
 	$columns = get_sub_field('columns'); 
 	$bgColor = get_sub_field('background_color');
 	// echo '<p> Number of Columns: '.$columns.'</p>';

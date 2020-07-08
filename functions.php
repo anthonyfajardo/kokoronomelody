@@ -229,12 +229,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 *
 ***************************/
 
-/* dump() - makes for easy debugging. <?php dump($post); ?> */
-function dump($obj) {
-	echo "<pre>";
-	print_r($obj);
-	echo "</pre>";
-}
+define( 'DISALLOW_FILE_EDIT', true );
+
 
 /*
 Show featured image as background image

@@ -1,5 +1,11 @@
-.section-wrapper{
-	margin: 25px 0;
+.content-editor{
+	padding: 25px 5px; 
+
+	@media screen and (min-width: 940px){
+		max-width: 940px;
+		margin-left: auto;		
+		margin-right: auto;
+	}
 }
 
 // contains either the image or text block
@@ -7,8 +13,6 @@
 	h2{ 
 		color: $color__link; 
 	}
-
-
 }
 
 // div that wraps the image content
@@ -99,18 +103,14 @@
 
 .column-1{
 	.wpforms-container{
-		// border: 1px solid red;
 		form#wpforms-form-494{
-			// border: 1px solid blue;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		
 			.wpforms-field{
-				// border: 1px solid orange;
 				padding: 0;
 				input#wpforms-494-field_1{
-					// border: 1px solid green;
 					max-width: 100%;
 					padding: 0;
 				}	
@@ -123,6 +123,8 @@
 
 		}
 	}
+
+	padding-bottom: 50px;
 }
 
 
@@ -133,7 +135,6 @@
 	}
 
 	.column-1{
-		// border: 1px solid red;
 		width: 100%;
 		a{ 
 			display: inline-block; 
@@ -205,6 +206,11 @@
 }
 
 @media screen and (min-width: 940px){
+	.section-wrapper{
+		max-width: 940px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	.column-3{
 		h2{ font-size: 16px; }
 		p{ font-size: 12px; }
@@ -223,10 +229,7 @@
 		}
 	}
 
-	.column-1{
-		padding-top: 50px;
-		padding-bottom: 50px;
-	}
+
 
 	.column-3{
 		align-items: space-between;
@@ -237,7 +240,6 @@
 
 @media screen and (min-width: 1280px){
 	.section-wrapper{
-		max-width: 940px;
 		margin: 50px auto;
 	}
 
